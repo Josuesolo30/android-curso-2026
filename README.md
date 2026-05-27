@@ -16,6 +16,7 @@ En mi caso, define una aplicación llamada HolaAndroid y registra la MainActivit
 
 2- ¿Qué es el atributo android:name en <activity>?
 
+
 El atributo android:name indica la clase Activity que Android debe ejecutar.
 
 -----------------------------------------------------------------------------------------------------------------
