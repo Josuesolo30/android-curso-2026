@@ -43,7 +43,10 @@ fun PantallaInicio(modifier: Modifier = Modifier) {
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {
+<<<<<<< HEAD
         // Icono (Ej. 3.24)
+=======
+>>>>>>> main
         Icon(
             imageVector = Icons.Default.Android,
             contentDescription = "Logo Android",
@@ -53,7 +56,10 @@ fun PantallaInicio(modifier: Modifier = Modifier) {
         
         Spacer(modifier = Modifier.height(16.dp))
 
+<<<<<<< HEAD
         // Texto con estilo y color (Ej. 3.23)
+=======
+>>>>>>> main
         Text(
             text = "¡Mi primera app Android!",
             fontSize = 24.sp,
@@ -71,7 +77,10 @@ fun PantallaInicio(modifier: Modifier = Modifier) {
 
         Spacer(modifier = Modifier.height(32.dp))
 
+<<<<<<< HEAD
         // Botón 1 (Ej. 2)
+=======
+>>>>>>> main
         Button(
             onClick = {
                 Log.d(TAG, "Botón presionado")
@@ -83,7 +92,10 @@ fun PantallaInicio(modifier: Modifier = Modifier) {
 
         Spacer(modifier = Modifier.height(12.dp))
 
+<<<<<<< HEAD
         // Botón 2 - Nombre (Ej. 3.22)
+=======
+>>>>>>> main
         Button(
             onClick = {
                 Log.i(TAG, "Nombre del desarrollador: Josue Piña")
