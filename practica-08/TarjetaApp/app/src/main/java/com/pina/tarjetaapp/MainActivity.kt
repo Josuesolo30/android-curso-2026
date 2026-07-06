@@ -34,8 +34,8 @@ class MainActivity : ComponentActivity() {
                         TarjetaContacto(
                             nombre = "Josue Piña",
                             cargo = "Estudiante — Ing. Software",
-                            email = "josue.pina@ejemplo.com",
-                            telefono = "+1 (809) 123-4567",
+                            email = "josue.pina@tuemail.com",
+                            telefono = "+1 (809) 000-0000",
                             github = "github.com/Josuesolo30"
                         )
                     }
