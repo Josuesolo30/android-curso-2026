@@ -1,4 +1,4 @@
-package com.pina.holaandroid
+package com.pina.primerapp
 
 import android.os.Bundle
 import android.util.Log
@@ -16,7 +16,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.pina.holaandroid.ui.theme.HolaAndroidTheme
+import com.pina.primerapp.ui.theme.PrimerAppTheme
 
 private const val TAG = "PrimerApp"
 
@@ -25,7 +25,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            HolaAndroidTheme {
+            PrimerAppTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
                     PantallaInicio(modifier = Modifier.padding(innerPadding))
                 }
@@ -95,7 +95,7 @@ fun PantallaInicio(modifier: Modifier = Modifier) {
 @Preview(showBackground = true, showSystemUi = true)
 @Composable
 fun PrevisualizacionInicio() {
-    HolaAndroidTheme {
+    PrimerAppTheme {
         PantallaInicio()
     }
 }
