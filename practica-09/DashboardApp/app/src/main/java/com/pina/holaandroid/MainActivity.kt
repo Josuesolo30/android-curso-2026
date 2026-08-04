@@ -29,7 +29,11 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             HolaAndroidTheme {
-                AppPrincipal()
+                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
+                    Box(modifier = Modifier.padding(innerPadding)) {
+                        PantallaDashboard()
+                    }
+                }
             }
         }
     }
