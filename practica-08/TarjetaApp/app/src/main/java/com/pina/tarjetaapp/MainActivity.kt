@@ -1,4 +1,4 @@
-package com.pina.holaandroid
+package com.pina.tarjetaapp
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -21,17 +21,25 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.pina.holaandroid.ui.theme.HolaAndroidTheme
+import com.pina.tarjetaapp.ui.theme.TarjetaAppTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            HolaAndroidTheme {
-                // Puedes alternar entre las apps para probarlas o tomarlas capturas
-                // ContadorApp() 
-                FormularioRegistro()
+            TarjetaAppTheme {
+                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
+                    Box(modifier = Modifier.padding(innerPadding)) {
+                        TarjetaContacto(
+                            nombre = "Josue Piña",
+                            cargo = "Estudiante — Ing. Software",
+                            email = "josue.pina@tuemail.com",
+                            telefono = "+1 (809) 000-0000",
+                            github = "github.com/Josuesolo30"
+                        )
+                    }
+                }
             }
         }
     }
@@ -45,6 +53,7 @@ fun TarjetaContacto(
     telefono: String,
     github: String,
 ) {
+    // Estado: Boolean que cambia con el botón
     var mostrarInfo by remember { mutableStateOf(false) }
 
     Column(
@@ -55,6 +64,7 @@ fun TarjetaContacto(
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center,
     ) {
+        // ── Sección superior: foto y nombre ──────────────────────────────
         Card(
             modifier = Modifier.fillMaxWidth(),
             shape = RoundedCornerShape(16.dp),
@@ -66,6 +76,7 @@ fun TarjetaContacto(
                     .fillMaxWidth(),
                 horizontalAlignment = Alignment.CenterHorizontally,
             ) {
+                // Foto de perfil (círculo con iniciales)
                 Box(
                     modifier = Modifier
                         .size(100.dp)
@@ -88,6 +99,7 @@ fun TarjetaContacto(
 
         Spacer(Modifier.height(16.dp))
 
+        // ── Sección inferior: datos de contacto ───────────────────────────
         Card(modifier = Modifier.fillMaxWidth(), shape = RoundedCornerShape(16.dp)) {
             Column(modifier = Modifier.padding(16.dp)) {
                 FilaContacto(Icons.Default.Email, "Email", email)
@@ -98,10 +110,12 @@ fun TarjetaContacto(
 
         Spacer(Modifier.height(24.dp))
 
+        // Botón que alterna el estado
         Button(onClick = { mostrarInfo = !mostrarInfo }) {
             Text(if (mostrarInfo) "Ocultar info" else "Más información")
         }
 
+        // Se muestra SOLO cuando mostrarInfo es true
         if (mostrarInfo) {
             Spacer(Modifier.height(16.dp))
             Card(modifier = Modifier.fillMaxWidth(), shape = RoundedCornerShape(16.dp)) {
@@ -112,6 +126,7 @@ fun TarjetaContacto(
                     Text("Universidad:", fontWeight = FontWeight.Bold)
                     Text("Universidad Dominico-Americano")
                     Spacer(Modifier.height(8.dp))
+                    // TODO: Agrega tu semestre y año de ingreso
                     Text("Semestre:", fontWeight = FontWeight.Bold)
                     Text("Primer Semestre 2026")
                     Spacer(Modifier.height(8.dp))
@@ -148,12 +163,12 @@ fun FilaContacto(icono: ImageVector, etiqueta: String, valor: String) {
 @Preview(showBackground = true, showSystemUi = true)
 @Composable
 fun PreviewTarjeta() {
-    HolaAndroidTheme {
+    TarjetaAppTheme {
         TarjetaContacto(
             nombre = "Josue Piña",
             cargo = "Estudiante — Ing. Software",
-            email = "josue.pina@tuemail.com",
-            telefono = "+1 (809) 000-0000",
+            email = "josue.pina@ejemplo.com",
+            telefono = "+1 (809) 123-4567",
             github = "github.com/Josuesolo30"
         )
     }

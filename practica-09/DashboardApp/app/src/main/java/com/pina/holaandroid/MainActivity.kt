@@ -29,9 +29,11 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             HolaAndroidTheme {
-                // Puedes alternar entre las apps para probarlas o tomarlas capturas
-                // ContadorApp() 
-                FormularioRegistro()
+                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
+                    Box(modifier = Modifier.padding(innerPadding)) {
+                        PantallaDashboard()
+                    }
+                }
             }
         }
     }

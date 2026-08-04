@@ -29,9 +29,7 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             HolaAndroidTheme {
-                // Puedes alternar entre las apps para probarlas o tomarlas capturas
-                // ContadorApp() 
-                FormularioRegistro()
+                AppPrincipal()
             }
         }
     }
