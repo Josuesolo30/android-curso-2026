@@ -5,7 +5,7 @@ package com.pina.holaandroid
  * Josue Piña
  */
 
-fun main() {
+fun mainPractica02() {
     // === EJERCICIO 1: val, var e inferencia ===
     val nombreCurso = "Programación Móvil I"
     val añoInicio: Int = 2026

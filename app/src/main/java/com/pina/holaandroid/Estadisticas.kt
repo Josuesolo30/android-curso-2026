@@ -45,7 +45,7 @@ fun producirEstadisticas(notas: List<Int>) {
     println("===============================")
 }
 
-fun main() {
+fun mainEstadisticas() {
     val listaNotas = listOf(85, 92, 61, 78, 45, 90, 73, 55, 88, 67)
     producirEstadisticas(listaNotas)
 }

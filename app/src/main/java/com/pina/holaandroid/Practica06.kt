@@ -89,7 +89,7 @@ class Producto private constructor(
         "[$codigo] $nombre | RD$ %.2f (+ IVA: RD$ %.2f)".format(precio, precioConImpuesto)
 }
 
-fun main() {
+fun mainPractica06() {
     // --- Pruebas Ejercicio 1 ---
     println("=== EJERCICIO 1: DATA CLASSES ===")
     var tarea1 = Tarea(1, "Instalar Android Studio", prioridad = Prioridad.ALTA)

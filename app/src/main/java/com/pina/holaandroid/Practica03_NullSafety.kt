@@ -5,9 +5,9 @@ package com.pina.holaandroid
  * Josue Piña
  */
 
-data class ResultadoValidacion(val esValido: Boolean, val mensaje: String)
+data class ResultadoValidacionSafety(val esValido: Boolean, val mensaje: String)
 
-fun validarUsuario(nombre: String?, email: String?): ResultadoValidacion {
+fun validarUsuarioSafety(nombre: String?, email: String?): ResultadoValidacionSafety {
     // 1. Uso de Safe-call (?.): Limpia el nombre si no es nulo
     val nombreProcesado = nombre?.trim()
 
@@ -15,25 +15,25 @@ fun validarUsuario(nombre: String?, email: String?): ResultadoValidacion {
     val nombreFinal = nombreProcesado ?: ""
 
     if (nombreFinal.length < 3) {
-        return ResultadoValidacion(false, "Nombre muy corto o inexistente")
+        return ResultadoValidacionSafety(false, "Nombre muy corto o inexistente")
     }
 
     // Validación manual de email para justificar el uso de !!
     if (email == null) {
-        return ResultadoValidacion(false, "Email es obligatorio (null)")
+        return ResultadoValidacionSafety(false, "Email es obligatorio (null)")
     }
 
     // 3. Uso de Not-null assertion (!!): 
     // Justificación: Se usa después de la validación manual arriba (if email == null),
     // por lo tanto, tenemos la seguridad técnica de que no causará un crash.
     if (!email!!.contains('@')) {
-        return ResultadoValidacion(false, "Email inválido: falta el símbolo @")
+        return ResultadoValidacionSafety(false, "Email inválido: falta el símbolo @")
     }
 
-    return ResultadoValidacion(true, "Usuario '$nombreFinal' con email '${email}' validado correctamente")
+    return ResultadoValidacionSafety(true, "Usuario '$nombreFinal' con email '${email}' validado correctamente")
 }
 
-fun main() {
+fun mainPractica03NullSafety() {
     println("=== PRUEBAS DE VALIDACIÓN (Null-Safety) ===\n")
 
     val casosPrueba = listOf(
@@ -44,7 +44,7 @@ fun main() {
     )
 
     casosPrueba.forEach { (n, e) ->
-        val resultado = validarUsuario(n, e)
+        val resultado = validarUsuarioSafety(n, e)
         val estado = if (resultado.esValido) "EXITO" else "ERROR"
         println("[$estado] Input: ($n, $e) -> ${resultado.mensaje}")
     }

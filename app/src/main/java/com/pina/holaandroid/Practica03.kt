@@ -59,7 +59,7 @@ fun analizarNotas(notas: List<Int>): Unit {
 }
 
 // === Ej. 3 Mapa de estudiantes y groupBy ===
-fun main() {
+fun mainPractica03() {
     println("=== EJERCICIO 1: Null-safety ===")
     val casos = listOf(
         Pair(null, "test@mail.com"),

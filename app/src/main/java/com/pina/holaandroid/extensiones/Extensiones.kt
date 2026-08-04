@@ -1,4 +1,4 @@
-package com.pina.holaandroid
+package com.pina.holaandroid.extensiones
 
 /**
  * Práctica 04 - Funciones de Extensión
@@ -28,7 +28,7 @@ fun String.mascararTarjeta(): String {
 // (4) List<Int>.aprobados(): List<Int> — retorna las notas mayores o iguales a 70.
 fun List<Int>.aprobados(): List<Int> = this.filter { it >= 70 }
 
-fun main() {
+fun mainExtensiones() {
     println("=== PRUEBAS DE FUNCIONES DE EXTENSIÓN ===\n")
 
     // Prueba 1: esEmail

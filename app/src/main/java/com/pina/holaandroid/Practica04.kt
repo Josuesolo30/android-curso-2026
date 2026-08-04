@@ -70,7 +70,7 @@ fun filtrarPedidos(pedidos: List<Pedido>, criterio: (Pedido) -> Boolean): List<P
     return pedidos.filter(criterio)
 }
 
-fun main() {
+fun mainPractica04() {
     println("=== EJERCICIO 1: Parámetros Nombrados ===")
     println(generarRecibo(nombreCliente = "Ana López", monto = 1500.0, descuento = 0.10))
     println(generarRecibo("Pedro Ruiz", 2800.0))

@@ -86,7 +86,7 @@ fun imprimirReporte(personas: List<Persona>) {
     }
 }
 
-fun main() {
+fun mainPractica05() {
     val est1 = Estudiante("Ana", "López", "00112345678", "2024-001", "Ing. Software")
     est1.agregarNota(85)
     est1.agregarNota(92)
